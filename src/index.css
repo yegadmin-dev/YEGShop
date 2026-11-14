@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+@theme {
+  --color-yeg-primary: #065E46;
+  --color-yeg-primary-dark: #06150E;
+  --color-yeg-secondary: #15803D;
+  --color-yeg-mint: #10B981;
+  --color-yeg-blue: #0284C7;
+  --color-yeg-bg: #FFFFFF;
+  --color-yeg-surface: #FFFFFF;
+  --color-yeg-accent: #10B981;
+  --font-display: "Neulis Sans", "Neulis", "Neulis Neue", "Neulis Alt", "Outfit", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Neulis Sans", "Neulis", "Neulis Neue", "Neulis Alt", "Outfit", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Neulis Sans", "Neulis", "Neulis Neue", "Neulis Alt", "Outfit", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --yeg-scroll-progress: 0;
+  --yeg-scroll-y: 0px;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: #FFFFFF;
+    color: #071A12;
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  button,
+  input,
+  select,
+  textarea,
+  .font-display,
+  .font-mono {
+    font-family: var(--font-display);
+  }
+
+  .font-mono,
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* =====================================================================
+   CUSTOM 3D PIXEL CURSOR SUPPRESSION ON FINE POINTER DESKTOP
+   ===================================================================== */
+@media (pointer: fine) and (hover: hover) {
+  html.yeg-custom-cursor-active,
+  html.yeg-custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* =====================================================================
+   MOTION & ANIMATION SYSTEM (COMPOSITOR-ONLY GPU PROPERTIES)
+   ===================================================================== */
+@keyframes yegPageEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes yegCtaFloatLoop {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -3px, 0) scale(1.022);
+  }
+}
+
+@keyframes yegCtaSheen {
+  0%,
+  55% {
+    transform: translate3d(-140%, 0, 0) skewX(-20deg);
+    opacity: 0;
+  }
+  65% {
+    opacity: 0.45;
+  }
+  85% {
+    transform: translate3d(240%, 0, 0) skewX(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(240%, 0, 0) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes yegFloatSlow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes yegDeckTimerBar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.yeg-page-enter {
+  animation: yegPageEnter 380ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.yeg-cta-loop {
+  overflow: hidden;
+  animation: yegCtaFloatLoop 3.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.yeg-cta-loop:not(.fixed):not(.sticky):not(.absolute) {
+  position: relative;
+}
+
+.yeg-cta-loop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 45%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.32) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  animation: yegCtaSheen 5.2s ease-in-out infinite;
+}
+
+.yeg-cta-loop:hover,
+.yeg-cta-loop:focus-visible {
+  animation-play-state: paused;
+}
+
+.yeg-float-slow {
+  animation: yegFloatSlow 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.yeg-hover-lift {
+  transition:
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 240ms ease,
+    border-color 200ms ease;
+}
+
+.yeg-hover-lift:hover {
+  transform: translate3d(0, -4px, 0);
+}
+
+/* Scroll-Triggered Reveal Blocks */
+.yeg-reveal {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.985);
+  transition:
+    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.yeg-reveal.yeg-reveal-left {
+  transform: translate3d(-18px, 0, 0);
+}
+
+.yeg-reveal.yeg-reveal-right {
+  transform: translate3d(18px, 0, 0);
+}
+
+.yeg-reveal.yeg-reveal-scale {
+  transform: scale(0.95);
+}
+
+.yeg-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.yeg-scroll-progress-bar {
+  transform: scaleX(var(--yeg-scroll-progress, 0));
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.yeg-scroll-parallax-soft {
+  transform: translate3d(0, calc(var(--yeg-scroll-y, 0px) * -0.06), 0);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yeg-page-enter,
+  .yeg-cta-loop,
+  .yeg-cta-loop::after,
+  .yeg-float-slow {
+    animation: none !important;
+  }
+
+  .yeg-reveal,
+  .yeg-hover-lift {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

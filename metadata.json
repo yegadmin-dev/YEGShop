@@ -1,0 +1,8 @@
+{
+  "name": "YEGShop by YEG Production",
+  "description": "Platform toko online multi-katalog, manajemen pesanan, dan sistem kasir POS terintegrasi milik YEG Production.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

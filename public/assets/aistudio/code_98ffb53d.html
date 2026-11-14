@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container": "#e7eeff", "surface-variant": "#d8e3fb", "secondary-fixed": "#94f7b3", "on-tertiary-container": "#4f3d00", "on-tertiary-fixed": "#241a00", "primary-fixed-dim": "#9cd3b4", "on-primary-fixed": "#002113", "tertiary-fixed": "#ffe08b", "secondary-container": "#91f4b1", "on-background": "#111c2d", "secondary": "#006d3b", "secondary-fixed-dim": "#78da99", "primary-fixed": "#b7efcf", "on-secondary-container": "#00723e", "surface": "#f9f9ff", "on-error-container": "#93000a", "surface-container-high": "#dee8ff", "error": "#ba1a1a", "surface-container-highest": "#d8e3fb", "on-surface": "#111c2d", "tertiary-fixed-dim": "#ebc246", "inverse-primary": "#9cd3b4", "surface-container-lowest": "#ffffff", "on-primary": "#ffffff", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "on-surface-variant": "#404943", "outline": "#717973", "surface-container-low": "#f0f3ff", "surface-bright": "#f9f9ff", "on-error": "#ffffff", "surface-dim": "#cfdaf2", "surface-tint": "#34684f", "outline-variant": "#c0c9c1", "error-container": "#ffdad6", "primary-container": "#174d36", "inverse-surface": "#263143", "inverse-on-surface": "#ecf1ff", "primary": "#003522", "tertiary-container": "#cda72b", "on-primary-container": "#87bd9f", "tertiary": "#745b00", "on-secondary-fixed-variant": "#00522b", "on-primary-fixed-variant": "#1a5039", "on-secondary-fixed": "#00210e", "on-tertiary-fixed-variant": "#584400", "background": "#f9f9ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1rem", "space-md": "1rem", "gutter-desktop": "1.5rem", "margin-tablet": "1.5rem", "space-xl": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "margin-desktop": "2rem", "gutter": "1rem", "space-xs": "0.25rem" }, fontFamily: { "label-numeric": ["JetBrains Mono"], "display-mobile": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-caps": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-code": ["JetBrains Mono"], "display": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-lg": ["Inter"] }, fontSize: { "label-numeric": ["1.25rem", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "600" }], "display-mobile": ["2rem", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }], "body-sm": ["0.75rem", { lineHeight: "1.4", letterSpacing: "0.01em", fontWeight: "400" }], "body-md": ["0.875rem", { lineHeight: "1.45", letterSpacing: "0", fontWeight: "400" }], "headline-lg-mobile": ["1.5rem", { lineHeight: "1.25", letterSpacing: "-0.01em", fontWeight: "600" }], "label-caps": ["0.6875rem", { lineHeight: "1", letterSpacing: "0.06em", fontWeight: "600" }], "headline-md": ["1.5rem", { lineHeight: "1.3", letterSpacing: "-0.015em", fontWeight: "600" }], "label-code": ["0.75rem", { lineHeight: "1", letterSpacing: "0.04em", fontWeight: "500" }], "display": ["3rem", { lineHeight: "1.15", letterSpacing: "-0.03em", fontWeight: "700" }], "headline-lg": ["2.25rem", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-sm": ["1.125rem", { lineHeight: "1.4", letterSpacing: "-0.01em", fontWeight: "600" }], "body-lg": ["1rem", { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Kembali" class="min-h-[44px] min-w-[44px] -ml-2 flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-primary-container truncate font-bold">Checkout Pos</h1></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-10">
+<!-- Progress Stepper / Breadcrumb Indicator -->
+<div class="px-margin pt-4 pb-3">
+<div class="bg-surface-container-low rounded-xl p-3 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary tracking-wider uppercase font-semibold">Proses Checkout</span>
+<span class="font-label-code text-label-code text-primary bg-primary-fixed px-2 py-0.5 rounded-full font-medium">Langkah 2 / 2</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full w-full rounded-full transition-all duration-500"></div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<p class="font-body-sm text-body-sm font-medium text-on-surface">Informasi Pemesan &amp; Pembayaran DP</p>
+</div>
+</div>
+</div>
+<form class="flex flex-col gap-4 px-margin" id="checkoutForm" onsubmit="event.preventDefault();">
+<!-- Section 1: Identitas Pelanggan / Institusi -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3.5">
+<div class="flex items-center gap-2 pb-2">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Identitas Pemesan</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Data untuk penerbitan faktur resmi &amp; produksi</p>
+</div>
+</div>
+<!-- Field 1: Nama Lengkap -->
+<div class="flex flex-col gap-1.5">
+<label class="font-body-md text-body-md font-semibold text-on-surface flex items-center justify-between" for="fullName">
+<span>Nama Lengkap Pemesan <span class="text-error font-bold">*</span></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-normal">Wajib Diisi</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">person_outline</span>
+<input class="w-full min-h-[48px] pl-11 pr-3 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all" id="fullName" required="" type="text" value="Drs. H. Mulyadi, M.Pd"/>
+</div>
+</div>
+<!-- Field 2: WhatsApp -->
+<div class="flex flex-col gap-1.5">
+<label class="font-body-md text-body-md font-semibold text-on-surface flex items-center justify-between" for="waNumber">
+<span>Nomor WhatsApp Aktif <span class="text-error font-bold">*</span></span>
+<span class="font-label-caps text-label-caps text-secondary font-medium">Auto Notifikasi</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">chat</span>
+<input class="w-full min-h-[48px] pl-11 pr-3 bg-surface-container-low text-on-surface font-label-numeric text-body-md rounded-lg focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all" id="waNumber" required="" type="tel" value="081298443210"/>
+</div>
+<div class="flex items-start gap-1.5 mt-0.5 bg-surface-container-low p-2 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5 flex-shrink-0">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">Invoice PDF &amp; update berkala status pesanan dikirim otomatis ke nomor ini.</p>
+</div>
+</div>
+<!-- Field 3: Nama Instansi -->
+<div class="flex flex-col gap-1.5">
+<label class="font-body-md text-body-md font-semibold text-on-surface flex items-center justify-between" for="institution">
+<span>Sekolah / Instansi / Komunitas</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-normal">Opsional</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">corporate_fare</span>
+<input class="w-full min-h-[48px] pl-11 pr-3 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all" id="institution" type="text" value="SMA Negeri 1 Bojongsoang"/>
+</div>
+</div>
+<!-- Field 4: Alamat -->
+<div class="flex flex-col gap-1.5">
+<label class="font-body-md text-body-md font-semibold text-on-surface flex items-center justify-between" for="address">
+<span>Alamat Pengiriman / Pickup</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-normal">Opsional</span>
+</label>
+<div class="relative flex">
+<span class="material-symbols-outlined absolute left-3.5 top-3.5 text-outline text-[20px] pointer-events-none">local_shipping</span>
+<textarea class="w-full min-h-[72px] pl-11 pr-3 py-2.5 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all resize-none" id="address" placeholder="Masukkan alamat lengkap atau pilih workshop pickup..." rows="2"></textarea>
+</div>
+</div>
+<!-- Field 5: Target Deadline -->
+<div class="flex flex-col gap-1.5">
+<label class="font-body-md text-body-md font-semibold text-on-surface flex items-center justify-between" for="productionDeadline">
+<span>Target Deadline Selesai <span class="text-error font-bold">*</span></span>
+<span class="font-label-caps text-label-caps text-on-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded-full font-semibold">Min H+7</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">event</span>
+<input class="w-full min-h-[48px] pl-11 pr-3 bg-surface-container-low text-on-surface font-label-numeric text-body-md rounded-lg focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all" id="productionDeadline" required="" type="date" value="2025-04-12"/>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant px-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+<p class="font-body-sm text-body-sm">Pengerjaan massal butuh minimal 7 hari kerja sejak approval sampel.</p>
+</div>
+</div>
+</div>
+<!-- Section 2: Skema & Metode Pembayaran -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3.5">
+<div class="flex items-center gap-2 pb-2">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Skema &amp; Metode Bayar</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pilih termin produksi yang Anda kehendaki</p>
+</div>
+</div>
+<!-- Scheme Toggle: DP 50% vs Full 100% -->
+<div class="grid grid-cols-2 gap-2 p-1 bg-surface-container-low rounded-xl">
+<button class="flex flex-col items-center justify-center p-2.5 rounded-lg bg-primary-container text-on-primary shadow-sm transition-all text-left" id="schemeDpBtn" onclick="selectScheme('dp')" type="button">
+<div class="flex items-center gap-1 font-body-sm text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>DP 50% (Mulai)</span>
+</div>
+<span class="font-label-numeric text-label-numeric text-secondary-fixed mt-1">Rp 1.022.500</span>
+</button>
+<button class="flex flex-col items-center justify-center p-2.5 rounded-lg bg-transparent text-on-surface hover:bg-surface-container transition-all text-left opacity-80" id="schemeFullBtn" onclick="selectScheme('full')" type="button">
+<div class="flex items-center gap-1 font-body-sm text-body-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-outline">radio_button_unchecked</span>
+<span>Pelunasan 100%</span>
+</div>
+<span class="font-label-numeric text-label-numeric text-on-surface-variant mt-1">Rp 2.045.000</span>
+</button>
+</div>
+<!-- Payment Method Tabs -->
+<div class="flex flex-col gap-2 mt-1">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Pilih Kanal Rekening</span>
+<div class="grid grid-cols-2 gap-2">
+<button class="min-h-[48px] px-3 py-2 rounded-lg bg-surface-container flex items-center justify-center gap-2 text-primary font-semibold text-body-md shadow-sm transition-all" id="methodSeaBankBtn" onclick="selectMethod('seabank')" type="button">
+<span class="material-symbols-outlined text-[20px] text-secondary">account_balance</span>
+<span class="truncate">SeaBank (Free)</span>
+</button>
+<button class="min-h-[48px] px-3 py-2 rounded-lg bg-surface-container-low flex items-center justify-center gap-2 text-on-surface-variant font-medium text-body-md transition-all" id="methodQrisBtn" onclick="selectMethod('qris')" type="button">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+<span class="truncate">QRIS Instan</span>
+</button>
+</div>
+</div>
+<!-- Detail Rekening SeaBank (SeaBank container) -->
+<div class="bg-surface-container rounded-xl p-4 flex flex-col gap-3 shadow-sm transition-all" id="seabankBox">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">SEABANK INDONESIA</span>
+</div>
+<span class="font-label-caps text-label-caps bg-secondary-fixed text-on-secondary-fixed font-bold px-2 py-0.5 rounded-full">Bebas Biaya Admin</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-3 flex items-center justify-between shadow-xs">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Nomor Rekening Tujuan</span>
+<span class="font-label-numeric text-[1.35rem] font-bold text-primary tracking-wider mt-0.5" id="rekeningVal">9017 0565 9816</span>
+</div>
+<button class="min-h-[44px] px-3.5 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold flex items-center gap-1 active:scale-95 transition-transform" id="copyBtn" onclick="copyRekening()" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span id="copyBtnText">Salin</span>
+</button>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Atas Nama Rekening:</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">Mochamad Ridhwan Mubarok</span>
+</div>
+</div>
+<!-- QRIS Dynamic Section (Hidden initially) -->
+<div class="hidden bg-surface-container rounded-xl p-4 flex flex-col items-center gap-3 shadow-sm transition-all text-center" id="qrisBox">
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-xs">
+<div class="w-48 h-48 bg-surface-container-low rounded-lg flex flex-col items-center justify-center p-3 relative overflow-hidden">
+<svg class="w-40 h-40 text-primary" fill="currentColor" viewbox="0 0 100 100">
+<path d="M0 0h36v36H0V0zm6 6v24h24V6H6zm6 6h12v12H12V12zM64 0h36v36H64V0zm6 6v24h24V6H70zm6 6h12v12H76V12zM0 64h36v36H0V64zm6 6v24h24V70H6zm6 6h12v12H12V76zm52-12h8v8h-8v-8zm16 0h8v8h-8v-8zm8 8h8v16h-8v-8h-8v8h-8v-8h8v-8zm0 20h8v8h-8v-8zm-24-4h8v12h-8v-12zm8 8h8v8h-8v-8zm-16-16h8v8h-8v-8z"></path>
+</svg>
+<div class="absolute inset-0 bg-primary/5 flex items-center justify-center pointer-events-none">
+<span class="bg-surface-container-lowest px-2 py-0.5 rounded text-[10px] font-bold text-primary shadow-xs">QRIS STANDAR</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Scan QRIS menggunakan BCA, Livin, GoPay, OVO, atau ShopeePay</p>
+</div>
+</div>
+<!-- Section 3: Upload Bukti Transfer & Validasi -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center gap-2 pb-1">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed-dim flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Bukti Transfer</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lampirkan struk untuk verifikasi instan</p>
+</div>
+</div>
+<!-- Upload Zone -->
+<label class="cursor-pointer" for="proofInput">
+<input accept="image/jpeg,image/png" class="sr-only" id="proofInput" onchange="handleFileChange(event)" type="file"/>
+<div class="w-full bg-surface-container-low rounded-xl p-4 flex flex-col items-center justify-center text-center gap-2 transition-colors hover:bg-surface-container">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">cloud_upload</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Unggah Foto Bukti Transfer</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Format JPG / PNG, maks 10MB</p>
+</div>
+<span class="min-h-[44px] px-4 rounded-lg bg-surface-container-highest text-primary font-body-sm text-body-sm font-semibold flex items-center gap-1.5 shadow-xs">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+            Pilih Berkas Struk
+          </span>
+</div>
+</label>
+<!-- Uploaded preview chip -->
+<div class="bg-secondary-fixed/30 rounded-lg p-3 flex items-center justify-between shadow-xs" id="filePreviewChip">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[24px] flex-shrink-0">check_circle</span>
+<div class="min-w-0">
+<p class="font-label-code text-label-code font-bold text-on-surface truncate">transfer_bukti_seabank_1022500.jpg</p>
+<p class="font-body-sm text-body-sm text-secondary font-medium">1.4 MB • Siap diverifikasi</p>
+</div>
+</div>
+<button aria-label="Hapus Bukti" class="min-h-[44px] min-w-[44px] flex items-center justify-center text-outline hover:text-error transition-colors" onclick="removeAttachment()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Sync Status Notice -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] flex-shrink-0">sync_saved_locally</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+          Pesanan akan masuk antrean <span class="font-label-code text-label-code text-primary font-bold">Orders_Waiting</span> di Google Sheets dan diverifikasi admin dalam 5-15 menit.
+        </p>
+</div>
+</div>
+<!-- Section 4: Ringkasan Akhir & Tombol Aksi -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between pb-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Ringkasan Tagihan</h2>
+<span class="font-label-caps text-label-caps bg-surface-container px-2 py-0.5 rounded text-primary font-semibold">Faktur #YEG-8821</span>
+</div>
+<div class="flex flex-col gap-2 pt-1 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex justify-between items-center">
+<span>Total Nilai Pesanan</span>
+<span class="font-label-numeric text-on-surface font-medium text-body-md">Rp 2.045.000</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Diskon Promosi Sekolah</span>
+<span class="font-label-numeric text-secondary font-medium text-body-md">- Rp 0</span>
+</div>
+<div class="w-full bg-surface-container-high h-[1px] my-1"></div>
+<div class="flex justify-between items-center bg-surface-container-low p-3 rounded-lg">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-bold text-primary" id="amountLabel">Nomor Wajib Bayar Sekarang (DP 50%)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Kompensasi awal bahan &amp; antrean</span>
+</div>
+<span class="font-label-numeric text-[1.4rem] font-bold text-primary" id="amountValue">Rp 1.022.500</span>
+</div>
+<div class="flex justify-between items-center px-1" id="remainingRow">
+<span class="text-on-surface-variant">Sisa Tagihan (Pelunasan H-1 Kirim):</span>
+<span class="font-label-numeric text-on-surface font-semibold" id="remainingValue">Rp 1.022.500</span>
+</div>
+</div>
+<!-- Alur Pengiriman Aman: Two-step Guard Buttons -->
+<div class="flex flex-col gap-2.5 pt-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">lock_clock</span>
+<p class="font-label-caps text-label-caps font-semibold uppercase tracking-wider text-primary">Dua Langkah Verifikasi Aman</p>
+</div>
+<!-- Step 1 CTA: Download Struk JPG -->
+<button class="w-full min-h-[52px] rounded-lg bg-surface-container-high text-primary hover:bg-surface-container flex items-center justify-center gap-2 px-4 shadow-sm active:scale-98 transition-all font-body-md text-body-md font-bold" id="btnStep1" onclick="handleDownloadReceipt()" type="button">
+<span class="material-symbols-outlined text-[22px]">download_for_offline</span>
+<span id="step1Text">① Unduh Struk Pesanan Resmi (JPG)</span>
+</button>
+<!-- Step 2 CTA: Send WhatsApp (WhatsApp Primary Green) -->
+<button class="w-full min-h-[52px] rounded-lg bg-secondary text-on-secondary hover:bg-primary-container flex items-center justify-center gap-2 px-4 shadow-md active:scale-98 transition-all font-body-md text-body-md font-bold" id="btnStep2" onclick="handleWhatsAppSend()" type="button">
+<span class="material-symbols-outlined text-[22px]">send</span>
+<span>② Kirim &amp; Konfirmasi ke WhatsApp Admin</span>
+</button>
+<!-- Prefilled WhatsApp Preview Hint -->
+<div class="bg-surface-container-low p-2 rounded-lg flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">chat_bubble</span>
+<p class="font-body-sm text-body-sm leading-tight truncate">
+            Draft chat otomatis: "Halo Admin YEG, konfirmasi DP #YEG-8821 atas nama Drs. H. Mulyadi..."
+          </p>
+</div>
+</div>
+</div>
+<!-- Security & Cloudflare Worker Seal -->
+<div class="bg-surface-container-low rounded-xl p-3.5 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">encrypted</span>
+</div>
+<div class="flex flex-col">
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">Data Transaksi Terenkripsi 256-bit</p>
+<p class="font-label-code text-label-code text-on-surface-variant">Tersinkronisasi otomatis via Cloudflare Worker API &amp; AppSheet DB.</p>
+</div>
+</div>
+</form>
+<!-- Toast Notification Bubble -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-4 py-2 rounded-full font-body-sm text-body-sm shadow-xl flex items-center gap-2 opacity-0 pointer-events-none transition-opacity duration-300 z-50" id="toastNotification">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]">check</span>
+<span id="toastMessage">Nomor rekening disalin!</span>
+</div>
+</div>
+<script>
+  let activeScheme = 'dp';
+  let activeMethod = 'seabank';
+  let receiptDownloaded = false;
+
+  function selectScheme(scheme) {
+    activeScheme = scheme;
+    const dpBtn = document.getElementById('schemeDpBtn');
+    const fullBtn = document.getElementById('schemeFullBtn');
+    const amountLabel = document.getElementById('amountLabel');
+    const amountValue = document.getElementById('amountValue');
+    const remainingRow = document.getElementById('remainingRow');
+
+    if (scheme === 'dp') {
+      dpBtn.className = 'flex flex-col items-center justify-center p-2.5 rounded-lg bg-primary-container text-on-primary shadow-sm transition-all text-left';
+      dpBtn.querySelector('.material-symbols-outlined').textContent = 'check_circle';
+      dpBtn.querySelector('span.font-label-numeric').className = 'font-label-numeric text-label-numeric text-secondary-fixed mt-1';
+
+      fullBtn.className = 'flex flex-col items-center justify-center p-2.5 rounded-lg bg-transparent text-on-surface hover:bg-surface-container transition-all text-left opacity-80';
+      fullBtn.querySelector('.material-symbols-outlined').textContent = 'radio_button_unchecked';
+      fullBtn.querySelector('span.font-label-numeric').className = 'font-label-numeric text-label-numeric text-on-surface-variant mt-1';
+
+      amountLabel.textContent = 'Nominal DP Wajib Bayar Sekarang (50%)';
+      amountValue.textContent = 'Rp 1.022.500';
+      remainingRow.style.display = 'flex';
+      showToast('Skema pembayaran diubah ke DP 50%');
+    } else {
+      fullBtn.className = 'flex flex-col items-center justify-center p-2.5 rounded-lg bg-primary-container text-on-primary shadow-sm transition-all text-left';
+      fullBtn.querySelector('.material-symbols-outlined').textContent = 'check_circle';
+      fullBtn.querySelector('span.font-label-numeric').className = 'font-label-numeric text-label-numeric text-secondary-fixed mt-1';
+
+      dpBtn.className = 'flex flex-col items-center justify-center p-2.5 rounded-lg bg-transparent text-on-surface hover:bg-surface-container transition-all text-left opacity-80';
+      dpBtn.querySelector('.material-symbols-outlined').textContent = 'radio_button_unchecked';
+      dpBtn.querySelector('span.font-label-numeric').className = 'font-label-numeric text-label-numeric text-on-surface-variant mt-1';
+
+      amountLabel.textContent = 'Nominal Pelunasan 100%';
+      amountValue.textContent = 'Rp 2.045.000';
+      remainingRow.style.display = 'none';
+      showToast('Skema diubah ke Pelunasan Penuh 100%');
+    }
+  }
+
+  function selectMethod(method) {
+    activeMethod = method;
+    const seaBankBtn = document.getElementById('methodSeaBankBtn');
+    const qrisBtn = document.getElementById('methodQrisBtn');
+    const seabankBox = document.getElementById('seabankBox');
+    const qrisBox = document.getElementById('qrisBox');
+
+    if (method === 'seabank') {
+      seaBankBtn.className = 'min-h-[48px] px-3 py-2 rounded-lg bg-surface-container flex items-center justify-center gap-2 text-primary font-semibold text-body-md shadow-sm transition-all';
+      qrisBtn.className = 'min-h-[48px] px-3 py-2 rounded-lg bg-surface-container-low flex items-center justify-center gap-2 text-on-surface-variant font-medium text-body-md transition-all';
+      seabankBox.classList.remove('hidden');
+      qrisBox.classList.add('hidden');
+    } else {
+      qrisBtn.className = 'min-h-[48px] px-3 py-2 rounded-lg bg-surface-container flex items-center justify-center gap-2 text-primary font-semibold text-body-md shadow-sm transition-all';
+      seaBankBtn.className = 'min-h-[48px] px-3 py-2 rounded-lg bg-surface-container-low flex items-center justify-center gap-2 text-on-surface-variant font-medium text-body-md transition-all';
+      seabankBox.classList.add('hidden');
+      qrisBox.classList.remove('hidden');
+    }
+  }
+
+  function copyRekening() {
+    const rawNumber = "901705659816";
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(rawNumber).then(() => {
+        showCopySuccess();
+      }).catch(() => {
+        showCopySuccess();
+      });
+    } else {
+      showCopySuccess();
+    }
+  }
+
+  function showCopySuccess() {
+    const copyText = document.getElementById('copyBtnText');
+    copyText.textContent = 'Disalin!';
+    showToast('No. Rekening SeaBank 901705659816 disalin!');
+    setTimeout(() => {
+      copyText.textContent = 'Salin';
+    }, 2000);
+  }
+
+  function handleFileChange(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const chip = document.getElementById('filePreviewChip');
+      chip.classList.remove('hidden');
+      chip.querySelector('.text-on-surface').textContent = file.name;
+      const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+      chip.querySelector('.text-secondary').textContent = `${sizeMb} MB • Siap diverifikasi`;
+      showToast('Struk berhasil dimuat!');
+    }
+  }
+
+  function removeAttachment() {
+    const chip = document.getElementById('filePreviewChip');
+    chip.classList.add('hidden');
+    document.getElementById('proofInput').value = '';
+    showToast('Bukti transfer dilepas');
+  }
+
+  function handleDownloadReceipt() {
+    receiptDownloaded = true;
+    const step1Btn = document.getElementById('btnStep1');
+    const step1Text = document.getElementById('step1Text');
+    
+    step1Text.textContent = '✓ Struk Resmi Terunduh (Struk_YEG_8821.jpg)';
+    step1Btn.classList.remove('bg-surface-container-high', 'text-primary');
+    step1Btn.classList.add('bg-secondary-fixed', 'text-on-secondary-fixed');
+
+    showToast('Struk order tersimpan! Lanjut konfirmasi WhatsApp.');
+  }
+
+  function handleWhatsAppSend() {
+    const name = document.getElementById('fullName').value || 'Pemesan';
+    const amount = activeScheme === 'dp' ? 'Rp 1.022.500 (DP 50%)' : 'Rp 2.045.000 (Lunas 100%)';
+    const deadline = document.getElementById('productionDeadline').value;
+    const instansi = document.getElementById('institution').value;
+
+    const message = encodeURIComponent(
+      `Halo Admin YEGShop,\n\nSaya telah menyelesaikan pembayaran untuk pesanan:\n` +
+      `• No Invoice: #YEG-8821\n` +
+      `• Nama: ${name}\n` +
+      `• Instansi: ${instansi || '-'}\n` +
+      `• Nominal Bayar: ${amount}\n` +
+      `• Metode: ${activeMethod === 'seabank' ? 'SeaBank' : 'QRIS'}\n` +
+      `• Target Selesai: ${deadline}\n\n` +
+      `Bukti transfer telah saya lampirkan. Mohon diverifikasi agar antrean produksi dimulai. Terima kasih!`
+    );
+
+    window.open(`https://wa.me/6281298443210?text=${message}`, '_blank');
+  }
+
+  function showToast(text) {
+    const toast = document.getElementById('toastNotification');
+    const msg = document.getElementById('toastMessage');
+    msg.textContent = text;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2800);
+  }
+</script></main></body></html>
